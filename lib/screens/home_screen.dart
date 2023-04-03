@@ -56,6 +56,12 @@ class HomeScreen extends StatelessWidget {
                           rating: 4.9,
                           pressDetails: () {},
                         ),
+                        const ReadingListCard(
+                          image: 'assets/images/book-2.png',
+                          title: 'Top Ten Business Hacks',
+                          auth: 'Herman Joel',
+                          rating: 4.8,
+                        ),
                         const SizedBox(width: 30),
                       ],
                     ),
