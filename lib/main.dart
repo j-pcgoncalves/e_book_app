@@ -1,4 +1,5 @@
 import 'package:e_book_app/constants.dart';
+import 'package:e_book_app/screens/home_screen.dart';
 import 'package:e_book_app/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
@@ -63,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const Placeholder();
+                        return const HomeScreen();
                       },
                     ),
                   );
