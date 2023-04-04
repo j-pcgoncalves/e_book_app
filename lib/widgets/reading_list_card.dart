@@ -58,7 +58,7 @@ class ReadingListCard extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.favorite_border,
                   ),
                   onPressed: () {},
@@ -69,7 +69,7 @@ class ReadingListCard extends StatelessWidget {
           ),
           Positioned(
             top: 160,
-            child: Container(
+            child: SizedBox(
               height: 85,
               width: 202,
               child: Column(

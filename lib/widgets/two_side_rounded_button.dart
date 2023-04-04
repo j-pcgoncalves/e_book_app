@@ -1,3 +1,4 @@
+import 'package:e_book_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class TwoSideRoundedButton extends StatelessWidget {
@@ -14,6 +15,23 @@ class TwoSideRoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          color: kBlackColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(radius),
+            bottomRight: Radius.circular(radius),
+          ),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 }
