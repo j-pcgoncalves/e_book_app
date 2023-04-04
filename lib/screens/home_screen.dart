@@ -1,4 +1,5 @@
 import 'package:e_book_app/constants.dart';
+import 'package:e_book_app/widgets/book_rating.dart';
 import 'package:e_book_app/widgets/reading_list_card.dart';
 import 'package:flutter/material.dart';
 
@@ -164,10 +165,19 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                Container(
+                                  height: 7,
+                                  width: size.width * .65,
+                                  decoration: BoxDecoration(
+                                    color: kProgressIndicator,
+                                    borderRadius: BorderRadius.circular(7),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
+                        const SizedBox(height: 40),
                       ],
                     ),
                   ),
@@ -216,7 +226,37 @@ Container bestOfTheDayCard(Size size, BuildContext context) {
                       color: kLightBlackColor,
                     ),
                   ),
-                )
+                ),
+                Text(
+                  'How to Win \nFriends & Influence',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const Text(
+                  'Gary Venchuk',
+                  style: TextStyle(color: kLightBlackColor),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 10.0),
+                  child: Row(
+                    children: const <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(right: 10.0),
+                        child: BookRating(score: 4.9),
+                      ),
+                      Expanded(
+                        child: Text(
+                          'When the earth was flat and everyone wanted to win the game of the best and people….',
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: kLightBlackColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
