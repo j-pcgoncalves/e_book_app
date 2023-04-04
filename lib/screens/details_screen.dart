@@ -1,7 +1,6 @@
 import 'package:e_book_app/constants.dart';
 import 'package:e_book_app/widgets/book_rating.dart';
 import 'package:e_book_app/widgets/rounded_button.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
