@@ -1,6 +1,7 @@
 import 'package:e_book_app/constants.dart';
 import 'package:e_book_app/widgets/book_rating.dart';
 import 'package:e_book_app/widgets/reading_list_card.dart';
+import 'package:e_book_app/widgets/two_side_rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -258,6 +259,27 @@ Container bestOfTheDayCard(Size size, BuildContext context) {
                   ),
                 ),
               ],
+            ),
+          ),
+        ),
+        Positioned(
+          right: 0,
+          top: 0,
+          child: Image.asset(
+            'assets/images/book-3.png',
+            width: size.width * .37,
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: SizedBox(
+            height: 40,
+            width: size.width * .3,
+            child: TwoSideRoundedButton(
+              text: 'Read',
+              radius: 24,
+              press: () {},
             ),
           ),
         ),
