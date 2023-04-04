@@ -193,7 +193,52 @@ class ChapterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    return const Placeholder();
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+      margin: const EdgeInsets.only(bottom: 16),
+      width: size.width - 48,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(38.5),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 10),
+            blurRadius: 33,
+            color: const Color(0xFFD3D3D3).withOpacity(.84),
+          ),
+        ],
+      ),
+      child: Row(
+        children: <Widget>[
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Chapter $chapterNumber : $name \n',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: kBlackColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(
+                  text: tag,
+                  style: const TextStyle(color: kLightBlackColor),
+                ),
+              ],
+            ),
+          ),
+          const Spacer(),
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_forward_ios,
+              size: 18,
+            ),
+            onPressed: press,
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -207,97 +252,95 @@ class BookInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Flex(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        direction: Axis.horizontal,
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Column(
-              children: <Widget>[
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Crushing &',
-                    style: Theme.of(context).textTheme.headlineLarge.copyWith(
-                          fontSize: 28,
-                        ),
-                  ),
+    return Flex(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      direction: Axis.horizontal,
+      children: <Widget>[
+        Expanded(
+          flex: 1,
+          child: Column(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Crushing &',
+                  style: Theme.of(context).textTheme.headlineLarge.copyWith(
+                        fontSize: 28,
+                      ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: size.height * .005),
-                  alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.only(top: 0),
-                  child: Text(
-                    'Influence',
-                    style: Theme.of(context).textTheme.titleMedium.copyWith(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                Row(
-                  children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: size.width * .3,
-                          padding: EdgeInsets.only(top: size.height * .02),
-                          child: const Text(
-                            'When the earth was flat and everyone wanted to win the game of the best people and winning with an A game with all the things you have.',
-                            maxLines: 5,
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: kLightBlackColor,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: size.height * .015),
-                          padding: const EdgeInsets.only(left: 10, right: 10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: TextButton(
-                            onPressed: () {},
-                            child: const Text('Read',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        IconButton(
-                          icon: const Icon(Icons.favorite_border,
-                              size: 20, color: Colors.grey),
-                          onPressed: () {},
-                        ),
-                        const BookRating(score: 4.9),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.transparent,
-              child: Image.asset(
-                'assets/images/book-1.png',
-                height: double.infinity,
-                alignment: Alignment.topRight,
-                fit: BoxFit.fitWidth,
               ),
+              Container(
+                margin: EdgeInsets.only(top: size.height * .005),
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(top: 0),
+                child: Text(
+                  'Influence',
+                  style: Theme.of(context).textTheme.titleMedium.copyWith(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+              ),
+              Row(
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: size.width * .3,
+                        padding: EdgeInsets.only(top: size.height * .02),
+                        child: const Text(
+                          'When the earth was flat and everyone wanted to win the game of the best people and winning with an A game with all the things you have.',
+                          maxLines: 5,
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: kLightBlackColor,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: size.height * .015),
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: const Text('Read',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      IconButton(
+                        icon: const Icon(Icons.favorite_border,
+                            size: 20, color: Colors.grey),
+                        onPressed: () {},
+                      ),
+                      const BookRating(score: 4.9),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.transparent,
+            child: Image.asset(
+              'assets/images/book-1.png',
+              height: double.infinity,
+              alignment: Alignment.topRight,
+              fit: BoxFit.fitWidth,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
