@@ -1,4 +1,5 @@
 import 'package:e_book_app/constants.dart';
+import 'package:e_book_app/screens/details_screen.dart';
 import 'package:e_book_app/widgets/book_rating.dart';
 import 'package:e_book_app/widgets/reading_list_card.dart';
 import 'package:e_book_app/widgets/two_side_rounded_button.dart';
@@ -56,7 +57,16 @@ class HomeScreen extends StatelessWidget {
                           title: 'Crushing & Influence',
                           auth: 'Gary Venchuk',
                           rating: 4.9,
-                          pressDetails: () {},
+                          pressDetails: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const DetailsScreen();
+                                },
+                              ),
+                            );
+                          },
                         ),
                         const ReadingListCard(
                           image: 'assets/images/book-2.png',
